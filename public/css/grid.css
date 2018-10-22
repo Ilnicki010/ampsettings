@@ -1,0 +1,87 @@
+.form {
+    margin: auto;
+}
+
+.form__elements {}
+
+.form__elements__input {
+    display: flex;
+    flex-direction: row;
+}
+
+.form__elements__input_element {
+    display: flex;
+    flex: 1;
+    flex-direction: column
+}
+
+.form__elements__knobs {
+    display: flex;
+    flex-direction: row;
+}
+
+.form__elements__element--knob {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center
+}
+
+.form__controll {
+    display: flex;
+    justify-content: center;
+}
+
+.form__elements__element {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* HOME VIEW */
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.header__text {
+    margin: auto;
+}
+
+.header__search-form {
+    flex: 1;
+    display: flex;
+}
+
+.header__search-form__input {
+    flex: 3;
+}
+
+.header__search-form__submit {
+    flex: 1;
+}
+
+.header__add-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.discover {
+    display: flex;
+    flex-direction: column;
+}
+
+.discover__text {
+    margin: auto;
+}
+
+.discover__items {
+    display: flex;
+    flex-direction: row;
+}
+
+.discover__items__item {
+    flex: 1;
+}
