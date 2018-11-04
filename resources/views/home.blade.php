@@ -1,14 +1,15 @@
 @extends('layouts.main')
-
+@section('header')
 <header class="header">
-    <h1 class="header__text">Hello there, let's play it</h1>
+    <h1 class="header__text">Hello there!</h1>
     <form action="{{route('home')}}" method="POST" class="header__search-form">
-            <input type="text" placeholder="Song name..." class="header__search-form__input" name="search"/>
+            <input type="text" placeholder="Enter song name, artist or user nick" class="header__search-form__input" name="search"/>
             <input type="submit" value="Search" class="header__search-form__submit">
             <input type="hidden" name="_token" value="{{Session::token()}}">
     </form>
 <a href="{{route('create')}}" class="header__add-button">Add</a>
 </header>
+@endsection
 @section('content')
    <div class="discover">
         <h1 class="discover__text">Discover</h1>

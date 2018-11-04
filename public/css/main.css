@@ -5,15 +5,26 @@
     margin: 0;
     text-decoration: none;
     font-weight: 300;
+    list-style-type: none;
+}
+
+*:focus {
+    outline: 0;
+}
+
+a {
+    color: rgb(135, 206, 235);
 }
 
 body {
     font-family: 'Quicksand';
-    background: #eee;
+    background: #fff;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    margin-top: 2vh;
+    margin-top: 12vh;
     padding: 20px;
 }
 
@@ -30,8 +41,8 @@ body {
 
 .form__elements__element--knob {
     padding: 2%;
-
 }
+
 
 .form__elements__element--knob * {
     padding: 2%;
@@ -48,7 +59,7 @@ body {
 }
 
 .form__controll__button {
-    background-color: rgb(135, 206, 235);
+    background-color: #87ceeb;
     color: #fff;
     border: 0;
     width: 50%;
@@ -62,9 +73,32 @@ body {
 
 /** message block **/
 .message-block {
-    float: right;
-    border-left: 3px solid rgb(135, 206, 235);
+
+    color: #fff;
     margin-bottom: 10vh;
+    padding: 20px;
+    opacity: .7;
+    min-width: 5%;
+}
+
+.message-block--error {
+    background: #B33A3A;
+}
+
+.message-block--error li::before {
+    font-family: "FontAwesome";
+    content: "\f071";
+    margin-right: 10px;
+}
+
+.message-block--message {
+    background: #4BB543;
+}
+
+.message-block--message li::before {
+    font-family: "FontAwesome";
+    content: "\f058";
+    margin-right: 10px;
 }
 
 .container__header {
@@ -75,9 +109,22 @@ body {
 
 /** home view **/
 .header {
-    background-image: url('../assets/header.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 20), rgba(0, 0, 0, 0)), url('../assets/header.png');
     color: #fff;
     height: 50vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin-top: 5vh;
+}
+
+.header--profile {
+    height: 30vh;
+    background: #222;
+    background-image: linear-gradient(rgba(0, 0, 0, 20), rgba(0, 0, 0, 0)), url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2387ceeb' fill-opacity='0.25' fill-rule='evenodd'/%3E%3C/svg%3E");
+
 }
 
 .header__text {
@@ -97,7 +144,7 @@ body {
     border: 0;
     padding: 20px;
     padding-left: 40px;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     font-weight: 200;
     color: #666;
     border-radius: 60px;
@@ -106,10 +153,9 @@ body {
 
 .header__search-form__submit {
     border: 0;
-
     background: rgb(135, 206, 235);
     color: #fff;
-    font-size: 22px;
+    font-size: 19px;
     font-weight: 200;
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
     cursor: pointer;
@@ -118,7 +164,7 @@ body {
     right: 70px;
     top: calc(50% - 20px);
     border: none;
-    height: 40px;
+    height: 38px;
     width: 130px;
     border-radius: 60px;
     outline: none;
@@ -161,9 +207,9 @@ body {
 }
 
 .discover__items__item {
-    background-color: rgb(135, 206, 235);
+    background-color: #222;
     color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     border: 0;
     margin: 20px;
@@ -175,4 +221,131 @@ body {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+}
+
+.footer {
+    text-align: center;
+    color: #eee;
+    padding: 7%;
+    font-size: 12px;
+    margin-top: 10%;
+    height: 40vh;
+    background-color: #222222;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2387ceeb' fill-opacity='0.09' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+
+}
+
+/* JOIN */
+.join_container {
+    padding: 20px;
+}
+
+.form--sign-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column
+}
+
+.form--sign-group__input {
+    height: 30px;
+    border: 0;
+    padding-left: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+    border-bottom: 3px solid rgb(135, 206, 235);
+}
+
+.form--sign__submit {
+    border: 0;
+    background: #87ceeb;
+    color: #fff;
+    font-size: 1.4rem;
+    min-height: 60px;
+    width: 50%;
+    margin: 50px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
+}
+
+.sign-in__text,
+.sign-up__text {
+    font-size: 2rem;
+}
+
+/* POST AMPSETS */
+.post {
+
+    width: 80%;
+    margin-top: 5vh;
+    padding: 5%;
+    background: #222;
+    color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 10px 18px -7px #222;
+    border-bottom: 5px solid rgb(135, 206, 235);
+
+}
+
+/* HEADER BAR */
+.header-bar {
+    height: 6vh;
+    background: #000;
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+    top: 0;
+}
+
+
+
+.header_bar__list {
+    margin-bottom: 10px;
+    display: flex;
+
+}
+
+.header_bar__search-form__input {
+    padding: 10px;
+    padding-left: 20px;
+    border-radius: 60px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-left: 1.3px solid rgb(135, 206, 235);
+    font-size: 14px;
+    color: #eee;
+}
+
+.header_bar__search-form__submit {
+    font-size: 12px;
+    width: 28px;
+    height: 28px;
+    margin-top: .5vh;
+}
+
+.user-name {
+    opacity: .7;
+}
+
+.user-name::after {
+    content: '\f007';
+    font-family: 'FontAwesome';
+    background: #87ceeb;
+    color: #fff;
+    padding: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 100%;
+    margin-left: 10px;
+}
+
+.no-results {
+    background: #222;
+    box-shadow: 0px 10px 18px -7px #222;
+    margin-top: 5vh;
+    color: #eee;
+}
+
+.header__add-button--no-results {
+    height: 10vh;
+    width: 20vw;
+    margin-top: 15vh
 }

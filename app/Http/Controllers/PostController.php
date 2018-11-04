@@ -9,7 +9,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller {
-
+    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    
     public function postCratePost(Request $request){
         $post=new Post();
         $artist = new Artist();
@@ -30,7 +36,12 @@ class PostController extends Controller {
         $post->bass=$request['bass'];
         $post->middle=$request['middle'];
         $post->likes=0;
-        $post->user_id = rand();
+        if(Auth::user()){
+            $post->user_id = Auth::user()->id;
+        }else{
+            $post->user_id = 4;
+        }
+        
 
         $getArtist = DB::table('artists')->where('artist_name','like','%'.$request['artist'].'%')->first();
 
@@ -50,11 +61,10 @@ class PostController extends Controller {
             'search'=>'required'
         ]);
         $posts=Post::all()->where('song_name',$request->search);
-        if(isset($posts)){
-            return view('search-results',['posts'=>$posts]);
-        }else{
-            echo 'XD';
-        }
+        $users=User::all()->where('nick',$request->search);
+        $artists=Artist::all()->where('artist_name',$request->search);
+            return view('search-results', ['posts'=>$posts,'users'=>$users,'artists'=>$artists]);
+        
     }
 
 
