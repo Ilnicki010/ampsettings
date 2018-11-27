@@ -11,11 +11,11 @@
             <form action="{{route('signup')}}" method="post" class="form form--sign">
                 <div class="form--sign-group">
                     <label class="form--sign-group__label" for="email">Your email</label>
-                    <input class="form--sign-group__input" type="text" name="email" id="email" value="{{Request::old('email')}}">
+                    <input class="form--sign-group__input" type="text" name="email" id="email" value="{{Request::old('email')}}" placeholder="eg. john@doe.com">
                 </div>
                 <div class="form--sign-group">
                     <label class="form--sign-group__label"  for="nick">Nick</label>
-                    <input class="form--sign-group__input"type="text" name="nick" id="nick" value="{{Request::old('nick')}}">
+                    <input class="form--sign-group__input"type="text" name="nick" id="nick" value="{{Request::old('nick')}}" placeholder="eg. cooljohn232">
                 </div>
                 <div class="form--sign-group">
                     <label class="form--sign-group__label"  for="password">Your password</label>
@@ -36,6 +36,7 @@
                     <label class="form--sign-group__label"  for="password">Your password</label>
                     <input class="form--sign-group__input" type="password" name="password" id="password">
                 </div>
+                <a href="#">Forgot password?</a>
                 <button type="submit" class="form--sign__submit">Sign In</button>
                 <input type="hidden" name="_token" value="{{Session::token()}}">
             </form>

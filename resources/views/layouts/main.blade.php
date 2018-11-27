@@ -22,31 +22,17 @@
     @include('includes.footer')
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.9/jquery.autocomplete.js"></script>
 <script src="{{URL::to('js/app.js')}}"></script>
+<script src="{{URL::to('js/main.js')}}"></script>
 <script src="{{URL::to('js/knob.js')}}"></script>
 <script src="{{URL::to('js/scroll.js')}}"></script>
-<script>
-     $('ul.pagination').hide();
-        $(function() {
-        $(".dial").knob({
-            width:100,
-            height:100
-        });
-        $('.infinite-scroll').jscroll({
-                autoTrigger: true,
-                loadingHtml: '<img class="center-block" src="/images/loading.gif" alt="Loading..." />', // MAKE SURE THAT YOU PUT THE CORRECT IMG PATH
-                padding: 0,
-                nextSelector: '.pagination li.active + li a',
-                contentSelector: 'div.infinite-scroll',
-                callback: function() {
-                    $('ul.pagination').remove();
-                }
-            });
-    });
+<script src="{{URL::to('js/type.js')}}"></script>
 
-    </script>
 </body>
 </html>

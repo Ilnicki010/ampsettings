@@ -35,11 +35,31 @@ Route::post('/create',[
     'uses'=>'PostController@postCratePost',
     'as'=>'create',
 ]);
+Route::post('/rating',[
+    'uses'=>'PostController@postRate',
+    'as'=>'rating.post',
+    'middleware'=>'auth'
+]);
+Route::get('/rating/{post_id}', [
+    'uses'=>'PostController@getRate',
+    'as'=>'rating.get',
+]);
 Route::get('/user/{user_nick}', [
     'uses'=>'UserController@getUserProfile',
     'as'=>'user'
+]);
+Route::get('/toprated', [
+    'uses'=>'PostController@getTopRated',
+    'as'=>'toprated'
+]);
+Route::get('/latest', [
+    'uses'=>'PostController@getLatest',
+    'as'=>'latest'
 ]);
 Route::get('/logout', [
     'uses'=>'UserController@getLogout',
     'as' => 'logout'
 ]);
+Route::get('/artist/find',[
+    'uses'=>'SearchController@searchArtists',
+    'as'=>'artistfind']);

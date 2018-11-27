@@ -22,7 +22,7 @@ class CreatePostsTable extends Migration
             $table->integer('bass');
             $table->integer('middle');
             $table->integer('user_id');
-            $table->integer('likes');
+            $table->float('rating');
             $table->timestamps();
             $table->rememberToken();
         });

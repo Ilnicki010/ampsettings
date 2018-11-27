@@ -26,6 +26,6 @@ class CreateArtistsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artists');
+       Schema::dropIfExists('artists');
     }
 }

@@ -12,4 +12,7 @@ class Post extends Model
    public function artist(){
        return $this->belongsTo('App\Artist');
    }
+   public function ratings(){
+       return $this->hasMany('App\Rating');
+   }
 }

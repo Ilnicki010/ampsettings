@@ -1,7 +1,7 @@
-<nav class="header-bar">
+<nav class="header-bar" id="header-bar">
     <ul class="header_bar__list">
         <li class="header_bar__list__link"><a  href="{{route('home')}}"><i class="fas fa-home"></i></a></li>
-        <form action="{{route('home')}}" method="POST" class="header__search-form header_bar__search-form">
+        <form action="{{route('home')}}" method="POST" class="header__search-form header_bar__search-form" autocomplete="off">
             <input type="text" placeholder="Enter song name, artist or user nick" class="header__search-form__input header_bar__search-form__input" name="search"/>
             <button type="submit" class="header__search-form__submit header_bar__search-form__submit"><i class="fas fa-search"></i></button>
             <input type="hidden" name="_token" value="{{Session::token()}}">
