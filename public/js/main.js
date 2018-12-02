@@ -1,15 +1,18 @@
+"use strict";
 let postId = 0;
 const addStar = document.querySelectorAll('#addStar');
 const header = document.querySelector('#header-bar');
 const headerButton = document.querySelector('#searchButton');
 const discoverText = document.querySelector('.discoversite__text');
-const headerProfile = document.querySelector('#headerProfile');
+const artistElements = document.querySelectorAll('#artistElement');
 
 [].forEach.call(addStar, function (star) {
+    console.log($(star));
     $(star).change('.star', function (e) {
         console.log('here');
         let rate = e.target.value;
-        postId = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.dataset['postid'];
+        postId = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.dataset['postid'];
+        console.log(postId);
         $.ajax({
                 method: 'POST',
                 url: ratingUrl,
@@ -26,8 +29,11 @@ const headerProfile = document.querySelector('#headerProfile');
                 if (data.status == 401)
                     swal("Wait...", "You can't judge others when you aren 't a part of AMPSettings fammily!", 'error', {
                         buttons: ["Oh sorry...", "Join!"],
+                    }).then(function (okay) {
+                        if (okay) window.location.href = "/join";
                     });
             });
+
     });
 
 });
@@ -37,6 +43,9 @@ function getRate() {
             method: 'GET',
             url: ratingUrl + '/' + postId,
         })
+        .fail((data) => {
+            console.log(data);
+        })
         .done((data) => {
             console.log(data);
             $('#ratingDial').val(data).trigger('change');
@@ -45,10 +54,34 @@ function getRate() {
 
 
 $(document).ready(function () {
-    $(".dial").knob();
+    var map = {};
+    $(".dial").each(function () {
+        map[$(this).attr("name")] = $(this).val();
+        if ($(this).val() <= 0.5) {
+            $(this).css('opacity', '.3');
+        }
+    });
+    console.log($('.dial').val());
+    if ($('.dial').val() <= 0.5) {
+        $(this).css('opacity', '.3');
+    }
+    $(".dial").knob({
+        'change': function (v) {
+            console.log(v);
+            if (v <= 0.5) {
+                this.$.css('opacity', '.3');
+            } else {
+                this.$.css('opacity', '1');
+            }
+        }
+    });
+    AOS.init();
+    $('#getAdvanced').on('click', function () {
 
+        $(this).next('.advanced__wrapped').toggle('medium');
+    });
     $('#artist').autocomplete({
-        serviceUrl: '/artist/find',
+        serviceUrl: '/find/artist',
         paramName: 'q',
         dataType: 'json',
         type: 'GET',
@@ -80,5 +113,17 @@ $(document).ready(function () {
             discoverText.style.fontSize = '55px';
         }
     });
+    let prevLabel, currLabel, currentLeterLI;
+    artistElements.forEach(el => {
+        currLabel = el.firstChild.text.substring(0, 1).toUpperCase();
+        if (currLabel !== prevLabel) {
 
+            currentLeterLI = document.createElement("li");
+            currentLeterLI.appendChild(document.createTextNode(currLabel));
+            currentLeterLI.className = 'artists-list__label'
+            el.prepend(currentLeterLI);
+            prevLabel = currLabel;
+        }
+
+    })
 });

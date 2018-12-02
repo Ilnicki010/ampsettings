@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePostsTable extends Migration
 {
@@ -21,6 +21,11 @@ class CreatePostsTable extends Migration
             $table->integer('treble');
             $table->integer('bass');
             $table->integer('middle');
+            $table->integer('delay');
+            $table->integer('distortion');
+            $table->integer('tremolo');
+            $table->integer('flanger');
+            $table->integer('phazer');
             $table->integer('user_id');
             $table->float('rating');
             $table->timestamps();

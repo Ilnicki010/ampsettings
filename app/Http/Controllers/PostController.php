@@ -30,15 +30,23 @@ class PostController extends Controller
 
         $post->song_name = $request['song_name'];
 
+        //basic settings
         $post->gain = $request['gain'];
         $post->treble = $request['treble'];
         $post->bass = $request['bass'];
         $post->middle = $request['middle'];
+        //advanced settings
+        $post->delay = $request['delay'];
+        $post->distortion = $request['distortion'];
+        $post->tremolo = $request['tremolo'];
+        $post->flanger = $request['flanger'];
+        $post->phazer = $request['phazer'];
+
         $post->rating = 0;
         if (Auth::user()) {
             $post->user_id = Auth::user()->id;
         } else {
-            $post->user_id = 4;
+            $post->user_id = 0;
         }
 
         $getArtist = DB::table('artists')->where('artist_name', 'like', '%' . $request['artist'] . '%')->first();
@@ -121,8 +129,13 @@ class PostController extends Controller
         foreach ($ratings as $rating) {
             $rate += $rating->rate;
         }
-        $rate = $rate / count($ratings);
-        return $rate;
+        if ($ratings > 0) {
+            $rate = $rate / count($ratings);
+            return $rate;
+        } else {
+            return 0;
+        }
+
     }
 
 }

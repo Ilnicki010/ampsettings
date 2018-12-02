@@ -5,6 +5,9 @@
 @if(($type === 'latest'))
     <h1 class="discoversite__text" id="#discoversite-text">10 Latest</h1>
 @endif
+@if(($type === 'artist'))
+    <h1 class="discoversite__text" id="#discoversite-text">{{$artist->artist_name}}</h1>
+@endif
 
 @section('content')
 <div class="results">
@@ -14,14 +17,14 @@
     
                         <h1>{{$post->song_name}}</h1> by {{$post->artist->artist_name}}
                         Added by 
-                        @if ($post->user->nick === 'Stranger')
-                        <span>{{$post->user->nick}}</span>
+                        @if ($post->user_id === 0)
+                        <span>Stranger</span>
                         @else
                         <a href="{{route('user', ['user_nick' => $post->user->nick])}}">{{$post->user->nick}}</a>
                         @endif
-                        @if($post->user->verified)
+                        {{-- @if($post->user->verified)
                             <i class="fas fa-check-circle"></i>
-                        @endif
+                        @endif --}}
         
                     <div class="post__rating">
                         @include('includes.rating')

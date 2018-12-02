@@ -39,14 +39,27 @@ body {
     border-top: 4px solid rgb(135, 206, 235);
 }
 
-.form__elements__element--knob {
-    padding: 2%;
+
+.form__getAdvancedButton {
+    cursor: pointer;
+    padding: 20px 20px 20px 20px;
+    opacity: .8;
+
 }
 
+.form__elements__knobs {
+    padding: 30px;
+    flex: 1;
+}
 
 .form__elements__element--knob * {
-    padding: 2%;
     cursor: pointer;
+}
+
+.form__elements__element--knob label {
+    margin-bottom: 14px;
+    font-size: 14px;
+    opacity: .9;
 }
 
 .form__elements__input_element__text {
@@ -122,13 +135,14 @@ body {
 
 .header--profile {
     height: 30vh;
-    /*background-image: linear-gradient(rgba(0, 0, 0, 20), rgba(0, 0, 0, 0)), url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2387ceeb' fill-opacity='0.25' fill-rule='evenodd'/%3E%3C/svg%3E");
-    
-    background-color: #222222;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%2387ceeb' fill-opacity='0.06'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    */
     background: #000;
     background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, .1)), url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%2387ceeb' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.header--artist {
+    height: 40vh;
+    font-size: 2em;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgb(1, 34, 43, 0.4));
 }
 
 .header__text {
@@ -195,12 +209,13 @@ body {
     top: 57vh;
     left: 40vw;
     right: 40vw;
-    transition: .2s linear;
+    transition: .1s ease-in-out;
 }
 
 .header__add-button:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    transform: scale(1.1)
+    color: #fff;
+    background: #222;
+    border-bottom: #87ceeb 1.2px solid;
 }
 
 .discover__text {
@@ -346,6 +361,18 @@ body {
     margin-bottom: 3%;
 
 }
+
+
+.advanced__wrapped {
+    display: none;
+}
+
+.advanced__elements.show {
+    display: flex;
+}
+
+
+
 
 .stars__div {
     display: inline;
@@ -550,4 +577,43 @@ label.star:before {
 .autocomplete-group strong {
     display: block;
     border-bottom: 1px solid #000;
+}
+
+/* ARTISTS LIST*/
+.artists-list {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 3;
+    padding: 5%;
+    min-height: 100vh;
+}
+
+.artists-list__element {
+    padding: 1%;
+    padding-left: 1.4%;
+    font-size: 1.4em;
+}
+
+.artists-list__label {
+    margin-top: 5%;
+    padding: 5px;
+    font-size: 1.6em;
+    color: rgba(0, 0, 0, .6)
+}
+
+fieldset {
+    padding: 10px;
+    border: #87ceeb 3px solid;
+    border-radius: 4px;
+    margin-top: 2vh;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: flex;
+    flex: 1;
+    transition: 1s linear;
+}
+
+legend {
+    padding: 10px;
+    opacity: .7;
 }
