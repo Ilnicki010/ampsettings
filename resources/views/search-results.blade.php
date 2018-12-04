@@ -35,16 +35,15 @@
 <div class="results">
     <h2 class="results__text">AMPSet's</h2>
     @foreach($posts as $post)
-        <div class="media">
             <div class="post" data-postid={{$post->id}}>
                     <div class="post__header">
     
                         <h1>{{$post->song_name}}</h1> by {{$post->artist->artist_name}}
                         Added by 
-                        @if ($post->user_id=== 0)
+                        @if ($post->user_id === 0)
                         <span>Stranger</span>
                         @else
-                        <a href="{{route('user', ['user_nick' => $post->user->nick])}}">{{$post->user->nick}}</a>
+                        
                         @endif
                         {{-- @if($post->user->verified)
                             <i class="fas fa-check-circle"></i>
@@ -73,7 +72,6 @@
                             </div>
                         </div>
                     </div>
-        </div>
     @endforeach
 </div>
 

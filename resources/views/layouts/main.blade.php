@@ -26,12 +26,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
 <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.9/jquery.autocomplete.js"></script>
 <script src="{{URL::to('js/app.js')}}"></script>
 <script src="{{URL::to('js/main.js')}}"></script>
 <script src="{{URL::to('js/knob.js')}}"></script>
-<script src="{{URL::to('js/scroll.js')}}"></script>
 <script src="{{URL::to('js/type.js')}}"></script>
 
 </body>

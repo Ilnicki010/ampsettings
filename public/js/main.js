@@ -4,12 +4,13 @@ const header = document.querySelector('#header-bar');
 const headerButton = document.querySelector('#searchButton');
 const discoverText = document.querySelector('.discoversite__text');
 const headerProfile = document.querySelector('#headerProfile');
-
+const ratingDials = document.querySelectorAll('#ratingDial');
 [].forEach.call(addStar, function (star) {
-    $(star).change('.star', function (e) {
-        console.log('here');
+    $(star).change(function (e) {
+        console.log('star changed');
         let rate = e.target.value;
-        postId = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.dataset['postid'];
+        postId = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.dataset['postid'];
+        console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
         $.ajax({
                 method: 'POST',
                 url: ratingUrl,
@@ -20,7 +21,9 @@ const headerProfile = document.querySelector('#headerProfile');
                 }
             })
             .done(() => {
-                getRate();
+                const dial = $(e.target).parent().parent().parent().find('#ratingDial');
+                getRate(dial);
+
             })
             .fail((data, textStatus) => {
                 if (data.status == 401)
@@ -32,21 +35,22 @@ const headerProfile = document.querySelector('#headerProfile');
 
 });
 
-function getRate() {
+function getRate(dial) {
     $.ajax({
             method: 'GET',
             url: ratingUrl + '/' + postId,
         })
         .done((data) => {
-            console.log(data);
-            $('#ratingDial').val(data).trigger('change');
+            console.log('rate :' +
+                data);
+            dial.val(data).trigger('change');
+
         });
 }
 
-
 $(document).ready(function () {
     $(".dial").knob();
-
+    $('.starrr').starrr();
     $('#artist').autocomplete({
         serviceUrl: '/artist/find',
         paramName: 'q',
