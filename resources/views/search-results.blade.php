@@ -4,8 +4,6 @@
 @endsection
 @section('content')
 @if (count($posts || $artists || $users) > 0)
-
-
 @if (count($artists) > 0)
 <div class="artists">
         <h2 class="results__text">Artists</h2>

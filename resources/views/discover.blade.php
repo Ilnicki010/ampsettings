@@ -5,6 +5,9 @@
 @if(($type === 'latest'))
     <h1 class="discoversite__text" id="#discoversite-text">10 Latest</h1>
 @endif
+@if(($type === 'artist'))
+    <h1 class="discoversite__text" id="#discoversite-text">{{$artist->artist_name}}</h1>
+@endif
 
 @section('content')
 <div class="results">

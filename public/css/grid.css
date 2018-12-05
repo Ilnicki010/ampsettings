@@ -132,14 +132,32 @@
 /* POST */
 .post {
     display: flex;
+    flex-direction: column;
+}
+
+.post__basic {
+    display: flex;
     flex-direction: row;
-    margin: auto;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.post__advanced {
+    display: flex;
+    flex-direction: column;
+}
+
+.advanced__elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .post__elements {
-    flex: 3;
     display: flex;
     flex-direction: row;
+    flex: 2;
 }
 
 .post__element label {
@@ -151,8 +169,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 6%;
+    margin-right: 6%;
 }
 
 .post__header {

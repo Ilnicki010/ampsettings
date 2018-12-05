@@ -15,24 +15,26 @@
         <h1 class="discover__text">Discover</h1>
         <hr class="discover__hr"/>
         <div class="discover__items">
-            <div class="discover__items__item animated bounceInUp delay-2s">
+            <div class="discover__items__item " data-aos="fade-up">
                 <a href="{{route('toprated')}}" style="color:#fff">
             <div class="discover__inner inner--one">
                 <h1 class="discovery__items__item__text">Top Rated</h1>
             </div>
              </a>
             </div>
-            <div class="discover__items__item animated bounceInUp">
+            <div class="discover__items__item " data-aos="fade-up">
                     <a href="{{route('latest')}}" style="color:#fff">
                     <div class="discover__inner inner--two">
                         <h1 class="discovery__items__item__text">Latest</h1>
                     </div>
                     </a>
             </div>
-            <div class="discover__items__item animated bounceInUp delay-1s">
+            <div class="discover__items__item " data-aos="fade-up">
+                    <a href="{{route('artist.list')}}" style="color:#fff">
                 <div class="discover__inner inner--three">
                     <h1 class="discovery__items__item__text">Artists</h1>
                 </div>
+                    </a>
             </div>
         </div>
    </div>
