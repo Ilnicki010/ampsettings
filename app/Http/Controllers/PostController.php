@@ -90,7 +90,6 @@ class PostController extends Controller
     {
         $rating_given = $request['rating'];
         $post_id = $request['postId'];
-
         $post = Post::find($post_id);
         if (Auth::user()) {
             $user_id = Auth::user()->id;
@@ -101,7 +100,6 @@ class PostController extends Controller
         if (!$post) {
             return null;
         }
-
         $rating = $user->ratings()->where('post_id', $post_id)->first();
         if (isset($rating)) {
             $already_rating = $rating->$rating;
@@ -129,13 +127,9 @@ class PostController extends Controller
         foreach ($ratings as $rating) {
             $rate += $rating->rate;
         }
-        if ($ratings > 0) {
-            $rate = $rate / count($ratings);
-            return $rate;
-        } else {
-            return 0;
-        }
-
+       
+        $rate = $rate / count($ratings);
+        return $rate;
     }
 
 }

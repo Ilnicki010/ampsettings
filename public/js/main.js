@@ -6,6 +6,7 @@ const headerButton = document.querySelector('#searchButton');
 const discoverText = document.querySelector('.discoversite__text');
 const headerProfile = document.querySelector('#headerProfile');
 const ratingDials = document.querySelectorAll('#ratingDial');
+
 [].forEach.call(addStar, function (star) {
     $(star).change(function (e) {
         console.log('star changed');
@@ -27,6 +28,7 @@ const ratingDials = document.querySelectorAll('#ratingDial');
 
             })
             .fail((data, textStatus) => {
+                console.log(data);
                 if (data.status == 401)
                     swal("Wait...", "You can't judge others when you aren 't a part of AMPSettings fammily!", 'error', {
                         buttons: ["Oh sorry...", "Join!"],
@@ -78,7 +80,7 @@ $(document).ready(function () {
             }
         }
     });
-    AOS.init();
+    //AOS.init();
     $('#getAdvanced').on('click', function () {
 
         $(this).next('.advanced__wrapped').toggle('medium');
