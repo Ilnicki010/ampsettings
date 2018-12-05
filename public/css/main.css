@@ -429,6 +429,7 @@ body {
     height: 20px;
     line-height: 20px;
     font-size: 20px;
+
 }
 
 .rating label {
@@ -437,6 +438,7 @@ body {
     left: 0;
     height: 100%;
     cursor: pointer;
+
 }
 
 .rating label:last-child {
@@ -473,6 +475,7 @@ body {
 .rating label .icon {
     float: left;
     color: transparent;
+    transition: .2s linear;
 }
 
 .rating label:last-child .icon {
@@ -481,12 +484,12 @@ body {
 
 .rating:not(:hover) label input:checked~.icon,
 .rating:hover label:hover input~.icon {
-    color: #09f;
+    color: #FFD700;
 }
 
 .rating label input:focus:not(:checked)~.icon:last-child {
     color: #000;
-    text-shadow: 0 0 5px #09f;
+    text-shadow: 0 0 5px #FFD700;
 }
 
 /* search reults */

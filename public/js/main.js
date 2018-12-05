@@ -50,14 +50,13 @@ function getRate(dial) {
 
 $(document).ready(function () {
     $(".dial").knob();
-    $('.starrr').starrr();
     $('#artist').autocomplete({
         serviceUrl: '/artist/find',
         paramName: 'q',
         dataType: 'json',
         type: 'GET',
         onSelect: function (suggestion) {
-            $(this).val(suggestion.value)
+            $(this).val(suggestion.value);
         },
 
     });

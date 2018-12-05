@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{URL::to('css/animate.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1">
 </head>
 <body>
     @include('includes.header-bar')
