@@ -922,5 +922,12 @@ h4 {
         justify-content: center;
     }
 
+    .artists-list {
+        columns: 1;
+        -webkit-columns: 1;
+        -moz-columns: 1;
+        padding: 30px;
+    }
+
 
 }

@@ -222,6 +222,18 @@
     flex: 1;
 }
 
+.artists-list {
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+    padding: 30px;
+}
+
+.artists-list__label {
+    font-size: 2em;
+    padding: 10px;
+}
+
 /*MESSAGE BLOCK*/
 .message-block {
     position: fixed;

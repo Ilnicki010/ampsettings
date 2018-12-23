@@ -7,6 +7,7 @@ const discoverText = document.querySelector('.discoversite__text');
 const headerProfile = document.querySelector('#headerProfile');
 const ratingDials = document.querySelectorAll('#ratingDial');
 const getAdvanced = document.querySelectorAll('#getAdvanced');
+const artistElements = document.querySelectorAll('#artistElement');
 var style = getComputedStyle(document.body);
 
 [].forEach.call(addStar, function (star) {
