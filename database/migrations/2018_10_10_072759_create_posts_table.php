@@ -21,6 +21,8 @@ class CreatePostsTable extends Migration
             $table->integer('treble');
             $table->integer('bass');
             $table->integer('middle');
+            $table->string('pickups_layout');
+            $table->integer('pickup_number');
             $table->integer('delay');
             $table->integer('distortion');
             $table->integer('tremolo');

@@ -9,6 +9,7 @@
 
 .form__elements__input {
     display: flex;
+    flex-wrap: wrap
 }
 
 .form__elements__input_element {
@@ -19,13 +20,15 @@
 
 .form__elements__knobs {
     display: flex;
+    flex-wrap: wrap;
+    flex: 1;
 }
 
 .form__elements__element--knob {
     display: flex;
     flex-direction: column;
     flex: 1;
-    align-items: center
+    align-items: center;
 }
 
 .form__controll {
@@ -39,10 +42,16 @@
     flex: 1;
 }
 
+.form__pickups-controll {
+    flex: 2;
+}
+
 /* HOME VIEW */
 .header {
     display: flex;
     flex-direction: column;
+
+
 }
 
 .header__text {
@@ -91,6 +100,7 @@
 /* JOIN */
 .join_container {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .sign-up {
@@ -132,14 +142,39 @@
 /* POST */
 .post {
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-width: 90%;
+}
+
+.post__basic {
+    display: flex;
     flex-direction: row;
-    margin: auto;
+    padding-left: 2%;
+    padding-right: 2%;
+    flex-wrap: wrap;
+}
+
+.post__rating {
+    margin-top: 10px;
+}
+
+.post__advanced {
+    display: flex;
+    flex-direction: column;
+}
+
+.advanced__elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .post__elements {
-    flex: 3;
     display: flex;
     flex-direction: row;
+    flex: 2;
 }
 
 .post__element label {
@@ -151,8 +186,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 6%;
+    margin-right: 6%;
 }
 
 .post__header {
@@ -175,10 +210,15 @@
 }
 
 .header_bar__search-form {
-    flex: 3;
+    flex: 5;
 }
 
 .header_bar__list__link {
+    flex: 2;
+
+}
+
+.header_bar__list__link:first-child {
     flex: 1;
 }
 
@@ -192,8 +232,15 @@
 
 .no-results {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10%;
+    padding: 5%;
+}
+
+.no-results div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

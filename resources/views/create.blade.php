@@ -39,6 +39,47 @@
                 </div>
         </fieldset>
         </div>
+        <fieldset>
+            <legend>Pickup's</legend>
+        <div class="form__pickups">
+            <div class="pickups pickups--hss" id="pickupHSS">
+                <label>H-S-S</label>
+                <label class="pickup"></label>
+                <label class="pickup"></label>
+                <label class="pickup pickup--doubble" for="r3"></label>
+                        
+            </div>
+            <div class="pickups pickups--hsh" id="pickupHSH">
+                    <label>H-S-H</label>
+                    <label class="pickup pickup--doubble" for="r4"></label>
+                    <label class="pickup" for="r5"></label>
+                    <label class="pickup pickup--doubble" for="r6"></label>
+              
+                </div>
+            <div class="pickups pickups--sss" id="pickupSSS">
+                        <label>S-S-S</label>
+                        <label class="pickup" for="r9"></label>
+                        <label class="pickup" for="r10"></label>
+                        <label class="pickup" for="r11"></label>
+                                
+                </div>
+        </div>
+        <div class="form__pickups-controll">
+            <div class="pickups-layout">
+                <select name="pickupsLayout" id="pickupsLayout" for="pickupsLayout">
+                        <option value="">Select pickups layout</option>
+                        <option value="H-S-S">H-S-S</option>
+                        <option value="H-S-H">H-S-H</option>
+                        <option value="S-S-S">S-S-S</option>
+                </select>
+            </div>
+         
+            <div class="pickups__range">
+                <input type="range" id="pickupNumber" name="pickupNumber" for="pickupNumber" min="1" max="5" step="1" value="1">
+                <p>Position: <span id="pickupPositionText"></span></p>
+            </div>
+        </div>
+    </fieldset>
         <div class="form__getAdvancedButton" id="getAdvanced">
             Advanced Settings <i class="fa fa-plus-circle"></i>
         </div>
@@ -84,3 +125,4 @@
     let searchUrl = '{{route('artistfind')}}';
     
 </script>
+

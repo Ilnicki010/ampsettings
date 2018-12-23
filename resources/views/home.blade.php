@@ -1,13 +1,15 @@
 @extends('layouts.main')
 @section('header')
 <header class="header">
-    <h1 class="header__text">Hello there!</h1>
-    <form action="{{route('home')}}" method="POST" class="header__search-form" autocomplete="off" style="margin-bottom:10vh">
-            <input type="text" placeholder="Enter song name, artist or user nick" class="header__search-form__input" name="search"/>
+    {{-- <h1 class="header__text">Hello there!</h1> --}}
+    <img class="header__logo" src="{{ asset('assets/logo.png') }}" alt="">
+
+    <form action="{{route('home')}}" method="POST" class="header__search-form header__search-form--main " autocomplete="off" style="margin-bottom:13vh">
+            <input type="text" placeholder="Song, artist, user nick" class="header__search-form__input" name="search"/>
             <button type="submit" value="Search" class="header__search-form__submit" id='headerButton'>Search</button>
             <input type="hidden" name="_token" value="{{Session::token()}}">
     </form>
-<a href="{{route('create')}}" class="header__add-button">Add</a>
+<button class="header__add-button"><a href="{{route('create')}}">Add</a></button>
 </header>
 @endsection
 @section('content')

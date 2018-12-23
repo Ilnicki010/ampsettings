@@ -11,9 +11,10 @@
 |
  */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// })->name('home');
+Route::view('/', 'home')->name('home');
 Route::post('/', [
     'uses' => 'PostController@postSearchPost',
     'as' => 'home',
@@ -28,9 +29,7 @@ Route::post('/signin', [
     'uses' => 'UserController@postSignIn',
     'as' => 'signin',
 ]);
-Route::get('/create', function () {
-    return view('create');
-});
+Route::view('/create', 'create')->name('create');
 Route::post('/create', [
     'uses' => 'PostController@postCratePost',
     'as' => 'create',
@@ -71,3 +70,7 @@ Route::get('/logout', [
 Route::get('/find/artist', [
     'uses' => 'SearchController@searchArtists',
     'as' => 'artistfind']);
+Route::get('/find/song', [
+    'uses' => 'SearchController@searchSong',
+    'as' => 'songfind']);
+Route::view('/privacy', 'static-pages.privacy')->name('privacy');

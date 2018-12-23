@@ -26,6 +26,8 @@ class PostController extends Controller
         $this->validate($request, [
             'song_name' => 'required|max:128',
             'artist' => 'required|max:128',
+            'pickupsLayout' => 'required|max:6',
+            'pickupNumber' => 'required',
         ]);
 
         $post->song_name = $request['song_name'];
@@ -35,6 +37,11 @@ class PostController extends Controller
         $post->treble = $request['treble'];
         $post->bass = $request['bass'];
         $post->middle = $request['middle'];
+
+        //pickups
+        $post->pickups_layout = $request['pickupsLayout'];
+        $post->pickup_number = $request['pickupNumber'];
+
         //advanced settings
         $post->delay = $request['delay'];
         $post->distortion = $request['distortion'];
@@ -127,7 +134,7 @@ class PostController extends Controller
         foreach ($ratings as $rating) {
             $rate += $rating->rate;
         }
-       
+
         $rate = $rate / count($ratings);
         return $rate;
     }
