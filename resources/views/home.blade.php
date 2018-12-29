@@ -9,7 +9,7 @@
             <button type="submit" value="Search" class="header__search-form__submit" id='headerButton'>Search</button>
             <input type="hidden" name="_token" value="{{Session::token()}}">
     </form>
-<button class="header__add-button"><a href="{{route('create')}}">Add</a></button>
+<a class="btn header__add-button"href="{{route('create')}}">Add</a>
 </header>
 @endsection
 @section('content')

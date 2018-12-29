@@ -201,6 +201,7 @@ body {
     font-weight: 300;
 }
 
+.btn,
 button {
     cursor: pointer;
     background: linear-gradient(to right, var(--accent-color) 50%, #24273c 50%);
@@ -210,11 +211,13 @@ button {
     color: #fff;
 }
 
+.btn a,
 button a,
 .swal-button--cancel {
     color: #fff;
 }
 
+.btn:hover,
 button:hover {
     background-position: right bottom;
 }
